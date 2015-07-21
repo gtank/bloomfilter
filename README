@@ -1,0 +1,15 @@
+This is a basic Go implementation of a Bloom filter. I built it to test the
+idea from Kirsch and Mitzenmacher [1] that you can use two hash functions to
+simulate an arbitrary number of additional hash functions without losing
+functionality in a Bloom filter. Cool result: they're right!
+
+It is very short code, see tests and comments for more details.
+
+```
+set := bloomfilter.NewBloomFilter(1000000, 8192) // elements, false positive rate
+set.Add([]("Hello, world!")
+set.Check([]("Hello, world!") // => true
+set.Check([]("String Not-appearing-in-this-set") // => false
+```
+
+[1] http://www.eecs.harvard.edu/~michaelm/postscripts/rsa2008.pdf
