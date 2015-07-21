@@ -7,9 +7,9 @@ It is very short code, see tests and comments for more details.
 
 ```
 set := bloomfilter.NewBloomFilter(1000000, 8192) // elements, false positive rate
-set.Add([]("Hello, world!")
-set.Check([]("Hello, world!") // => true
-set.Check([]("String Not-appearing-in-this-set") // => false
+set.Add([]byte("Hello, world!"))
+set.Check([]byte("Hello, world!")) // => true
+set.Check([]byte("String Not-appearing-in-this-set")) // => false
 ```
 
 [1] http://www.eecs.harvard.edu/~michaelm/postscripts/rsa2008.pdf
